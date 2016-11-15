@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Music</title>
+	<link rel="stylesheet" href="音乐播放器/glyphicon.css">
+	<style>
+		*
+		{
+			box-sizing: border-box;
+			text-decoration: none;
+			font-weight: normal;
+		}
+		body
+		{
+			margin: 0;
+			overflow: hidden;
+			user-select:none;
+			background-color: #F1C7EA;
+		}
+		section
+		{
+			width: 500px;
+			height: 500px;
+			background-image: url(音乐播放器/wf.png);
+			/*background-color: #F3CD5C;*/
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			display: flex;
+			flex-direction: column;
+			margin: 50px auto;
+			border-radius: 15px;
+			box-shadow: 0px 0px 20px #EB7108;
+		}
+		section header
+		{
+			height: 145px;
+			width: 100%;
+			background-color: rgba(212,204,202,0.93);
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+		section header h1,h2
+		{
+			font-size: 30px;
+			margin: 20px auto;
+			/*height: 50px;*/
+			/*background-color: red;*/
+			text-align: center;
+			/*text-align: center;*/
+			/*margin-top: 50px;*/
+			color: #6D9BF2;
+		}
+		section h2
+		{
+			font-size: 16px;
+		}
+		progress:nth-of-type(1)
+		{
+			width: 100%;
+			height: 5px;
+			background-color: #7BE420;
+		}
+		::-webkit-progress-bar
+		{
+			background-color: #EB1FCC;
+		}
+		main
+		{
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255,255,243,0.8);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		time
+		{
+			font-size: 80px;
+			margin-top: 40px;
+		}
+		div
+		{
+			display: flex;
+			width: 300px;
+			/*background-color: red;*/
+			display: flex;
+			justify-content: space-between;
+			margin-top: 30px;
+		}
+		div span
+		{
+			font-size: 40px;
+		}
+		aside
+		{
+			margin-top: 100px;
+			display: flex;
+			width: 200px;
+			align-items: center;
+			justify-content: space-between;
+			/*background-color: red;*/
+		}
+		#progress
+		{
+			display: inline-block;
+			width: 150px;
+			/*height: 5px;*/
+			background-color: red;
+			height: 3px;
+			border-radius: 5px;
+		}
+		time:hover, div span:hover, aside>*:hover
+		{
+			color: white;
+			text-shadow: 0 0 20px black;
+		}
+	</style>
+</head>
+<body>
+	<audio src=""></audio>
+	<section>
+		<header>
+			<h1>传奇</h1>
+			<h2>王菲</h2>
+		</header>
+		<progress value="0"></progress>
+		<main>
+			<time>00:00</time>
+			<div>
+				<span class="glyphicon glyphicon-backward" onclick="pre()"></span>
+				<span class="glyphicon glyphicon-pause" onclick="playOrpause()"></span>
+				<span class="glyphicon glyphicon-forward" onclick="next()"></span>
+			</div>
+
+			<aside>
+				<span class="glyphicon glyphicon-volume-down" onclick="volumeDown()"></span>
+				<progress id="progress" value="0.5"></progress>
+				<span class="glyphicon glyphicon-volume-up" onclick="volumeUp()"></span>
+		</aside>
+		</main>
+
+		
+	</section>
+	<script src ='框架/js/jquery.js'></script>
+	<script src = 'music.js'></script>
+</body>
+</html>
